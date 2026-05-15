@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liyuan Liu | Ph.D. Student</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: #24292e;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1012px;
+            margin: 0 auto;
+            padding: 32px;
+        }
+
+        header {
+            display: flex;
+            align-items: flex-start;
+            gap: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid #e1e4e8;
+            margin-bottom: 24px;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 48px;
+            font-weight: 600;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-info h1 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #24292e;
+            margin-bottom: 4px;
+        }
+
+        .header-info .username {
+            font-size: 20px;
+            color: #586069;
+            margin-bottom: 12px;
+        }
+
+        .header-info .bio {
+            font-size: 16px;
+            color: #24292e;
+            margin-bottom: 16px;
+            max-width: 600px;
+        }
+
+        .header-info .location {
+            font-size: 14px;
+            color: #586069;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            color: #0366d6;
+            text-decoration: none;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            gap: 32px;
+        }
+
+        .sidebar h2 {
+            font-size: 14px;
+            font-weight: 600;
+            color: #24292e;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e1e4e8;
+        }
+
+        .sidebar-section {
+            margin-bottom: 24px;
+        }
+
+        .sidebar-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 8px;
+            padding: 6px 0;
+            font-size: 14px;
+            color: #24292e;
+        }
+
+        .sidebar-item .icon {
+            width: 16px;
+            text-align: center;
+            color: #586069;
+            flex-shrink: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            margin: 4px 4px 4px 0;
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 18px;
+            border: 1px solid #e1e4e8;
+            border-radius: 2em;
+            background-color: #f6f8fa;
+            color: #0366d6;
+        }
+
+        .content h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #24292e;
+            margin-bottom: 16px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #e1e4e8;
+        }
+
+        .content-section {
+            margin-bottom: 32px;
+        }
+
+        .paper-item {
+            padding: 16px;
+            margin-bottom: 12px;
+            border: 1px solid #e1e4e8;
+            border-radius: 6px;
+            background: #fff;
+        }
+
+        .paper-item:hover {
+            border-color: #0366d6;
+        }
+
+        .paper-title {
+            font-size: 15px;
+            font-weight: 600;
+            color: #0366d6;
+            margin-bottom: 6px;
+        }
+
+        .paper-authors {
+            font-size: 13px;
+            color: #586069;
+            margin-bottom: 4px;
+        }
+
+        .paper-venue {
+            font-size: 13px;
+            color: #24292e;
+            font-style: italic;
+        }
+
+        .paper-tag {
+            display: inline-block;
+            padding: 2px 8px;
+            margin-left: 8px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #fff;
+            background: #28a745;
+            border-radius: 3px;
+        }
+
+        .paper-tag.top { background: #e63946; }
+        .paper-tag.ccfa { background: #d63384; }
+        .paper-tag.ccfb { background: #fd7e14; }
+        .paper-tag.ccfc { background: #20c997; }
+
+        .stats {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 28px;
+            font-weight: 600;
+            color: #24292e;
+        }
+
+        .stat-label {
+            font-size: 12px;
+            color: #586069;
+        }
+
+        .award-item {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+
+        .award-item:last-child {
+            border-bottom: none;
+        }
+
+        .award-year {
+            color: #586069;
+            font-size: 13px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="avatar">
+                <img src="avatar.jpg" alt="Liyuan Liu">
+            </div>
+            <div class="header-info">
+                <h1>Liyuan Liu (刘力源)</h1>
+                <div class="username">Ph.D. Candidate</div>
+                <p class="bio">
+                    Ph.D. student in Agricultural Information Engineering at Huazhong Agricultural University. 
+                    Research interests: Machine Learning, Statistical Learning Theory, Generalization Bounds, 
+                    Non-asymptotic Analysis.
+                </p>
+                <div class="location">
+                    <span>📍 Wuhan, China</span>
+                    <span>🏫 College of Informatics, HZAU</span>
+                </div>
+                <div class="social-links">
+                    <a href="mailto:llys@webmail.hzau.edu.cn">📧 llys@webmail.hzau.edu.cn</a>
+                    <a href="https://github.com/liuliyuanhzau" target="_blank">💻 GitHub</a>
+                    <a href="#" target="_blank">🎓 Google Scholar</a>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <div class="sidebar-section">
+                    <h2>Research Interests</h2>
+                    <div>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Statistical Learning Theory</span>
+                        <span class="tag">Generalization Bounds</span>
+                        <span class="tag">Non-asymptotic Analysis</span>
+                        <span class="tag">Mixing Processes</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2>Education</h2>
+                    <div class="sidebar-item">
+                        <span class="icon">🎓</span>
+                        <span><b>Ph.D.</b> in Agricultural Information Engineering<br><small>Huazhong Agricultural University (2023–Present)</small></span>
+                    </div>
+                    <div class="sidebar-item">
+                        <span class="icon">🎓</span>
+                        <span><b>M.S.</b> in Mathematics<br><small>Huazhong Agricultural University (2021–2023)</small></span>
+                    </div>
+                    <div class="sidebar-item">
+                        <span class="icon">🎓</span>
+                        <span><b>B.S.</b> in Information and Computing Science<br><small>Hubei University of Technology (2017–2021)</small></span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h2>Contact</h2>
+                    <div class="sidebar-item">
+                        <span class="icon">📧</span>
+                        <span>llys@webmail.hzau.edu.cn</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <span class="icon">📱</span>
+                        <span>+86 177-7182-0834</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <span class="icon">🏢</span>
+                        <span>College of Informatics, HZAU</span>
+                    </div>
+                    <div class="sidebar-item">
+                        <span class="icon">📍</span>
+                        <span>Wuhan, Hubei, China</span>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="content">
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">8</div>
+                        <div class="stat-label">Publications</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">CCF-A Papers</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Under Review</div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>📚 Publications</h2>
+                    
+                    <div class="paper-item">
+                        <div class="paper-title">Generalization Bounds of Deep Neural Networks With τ-Mixing Samples</div>
+                        <div class="paper-authors">Liyuan Liu, Yaohui Chen, Weifu Li, Yingjie Wang, Bin Gu, Feng Zheng, Hong Chen</div>
+                        <div class="paper-venue">IEEE Transactions on Neural Networks and Learning Systems, 2025 <span class="paper-tag top">JCR Q1 TOP</span></div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-title">Trajectory-Dependent Generalization Bounds for Pairwise Learning with φ-Mixing Samples</div>
+                        <div class="paper-authors">Liyuan Liu, Hong Chen, Weifu Li, Tieliang Gong, Hao Deng, Yulong Wang</div>
+                        <div class="paper-venue">IJCAI 2025 <span class="paper-tag ccfa">CCF-A</span></div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-title">On the Generalization Ability of Next-Token-Prediction Pretraining</div>
+                        <div class="paper-authors">Zhihao Li, Xue Jiang, Liyuan Liu, Xuelin Zhang, Hong Chen, Feng Zheng</div>
+                        <div class="paper-venue">ICML 2025 <span class="paper-tag ccfa">CCF-A</span></div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-title">The Consistency Analysis of Gradient Learning under Independent Covariate Shift</div>
+                        <div class="paper-authors">Liyuan Liu, Hong Chen, Chi Xiao, Weifu Li</div>
+                        <div class="paper-venue">Neurocomputing, 2025 <span class="paper-tag">JCR Q2</span></div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-title">Gradient Learning under Tilted Empirical Risk Minimization</div>
+                        <div class="paper-authors">Liyuan Liu, Biqin Song, Zhibin Pan, Chuanwu Yang, Chi Xiao, Weifu Li</div>
+                        <div class="paper-venue">Entropy, 2022 <span class="paper-tag">JCR Q3</span></div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-title">Variable Selection Using Deep Variational Information Bottleneck with Drop-Out-One Loss</div>
+                        <div class="paper-authors">Junlong Pan, Weifu Li, Liyuan Liu, Kang Jia, Tong Liu, Fen Chen</div>
+                        <div class="paper-venue">Applied Sciences, 2023 <span class="paper-tag">JCR Q4</span></div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-title">Distribution-Aware Neural Additive Models</div>
+                        <div class="paper-authors">Jingyi Chen, Xuelin Zhang, Peipei Yuan, Liyuan Liu, Hong Chen</div>
+                        <div class="paper-venue">ICASSP 2026 <span class="paper-tag ccfb">CCF-B</span></div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-title">Pairwise Generalized Importance Weighting for Metric Learning under Distribution Shift</div>
+                        <div class="paper-authors">Richeng Zhou, Xuelin Zhang, Hong Chen, Weifu Li, Liyuan Liu</div>
+                        <div class="paper-venue">ICPADS 2025 <span class="paper-tag ccfc">CCF-C</span></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>📝 Working Papers</h2>
+                    
+                    <div class="paper-item">
+                        <div class="paper-title">Concentration Inequality for Dependent V-statistics and Its Applications</div>
+                        <div class="paper-authors">Liyuan Liu, et al.</div>
+                        <div class="paper-venue">Submitted to Machine Learning <span class="paper-tag ccfb">CCF-B</span></div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-title">Generalization Bounds for Distributed Pairwise Learning with α-mixing Samples</div>
+                        <div class="paper-authors">Liyuan Liu, et al.</div>
+                        <div class="paper-venue">Submitted to Electronic Journal of Probability <span class="paper-tag">JCR Q2</span></div>
+                    </div>
+
+                    <div class="paper-item">
+                        <div class="paper-title">Beyond RKHS: Gradient Learning with Non-symmetric Kernel</div>
+                        <div class="paper-authors">Liyuan Liu, et al.</div>
+                        <div class="paper-venue">Submitted to Journal of Statistical Planning and Inference <span class="paper-tag">JCR Q4</span></div>
+                    </div>
+                </div>
+
+                <div class="content-section">
+                    <h2>🏆 Awards & Honors</h2>
+                    <div class="award-item">
+                        🥇 National Scholarship for Ph.D. Students <span class="award-year">(2025)</span>
+                    </div>
+                    <div class="award-item">
+                        🥇 First Prize, Graduate Academic Annual Conference (Mathematics), College of Informatics <span class="award-year">(2024)</span>
+                    </div>
+                    <div class="award-item">
+                        🥇 First Prize, Graduate Forum on Mathematics and Applied Statistics, HZAU <span class="award-year">(2023)</span>
+                    </div>
+                    <div class="award-item">
+                        🏅 Excellent Doctoral Presentation, Hubei Computer Science Academic Annual Conference <span class="award-year">(2025)</span>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</body>
+</html>
